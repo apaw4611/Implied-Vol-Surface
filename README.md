@@ -1,8 +1,7 @@
-# BU493 Project - Neural Network Pricing of the Implied Volatility Surface
+# Neural Network Pricing of the Implied Volatility Surface
 
-**Group:** Scott Wilson, Ben Peters, Amar Pawan, Sahir Khan  
-**Course:** BU493  
-**Tier:** C (C3 - Neural network pricing of the implied volatility surface)
+**Group:** Sahir Khan, Amar Pawan, Ben Peters, Scott Wilson
+**Course:** BU493 - ML in Finance
 
 ## Overview
 
@@ -90,14 +89,6 @@ Then select the `bu493-project` kernel in any notebook.
 3. `notebooks/polynomial.ipynb` - polynomial Ridge regression baseline; degree and alpha tuning; test set evaluation
 4. *(todo)* `notebooks/svi.ipynb` - SVI parametric baseline
 5. *(todo)* `notebooks/neural_network.ipynb` - feedforward NN; hyperparameter tuning; comparison against baselines
-
-## Models
-
-| Model | Status | Inputs | Target |
-|---|---|---|---|
-| Polynomial Ridge | ✅ Done | logMoneyness, years | normalizedIV |
-| SVI | 🔲 Todo | logMoneyness per maturity slice | totalVariance |
-| Feedforward NN | 🔲 Todo | logMoneyness, years, callPut, atmIV, realizedVol, recentReturn | normalizedIV |
 
 ## Evaluation
 
