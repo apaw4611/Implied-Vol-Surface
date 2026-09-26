@@ -433,28 +433,10 @@ bu493_project/
 │   └── figures/      # Saved plots and output figures
 ├── PROJECT_PLAN.md   # This document
 └── README.md
+
+---
+
 ```
-
----
-
-## 13. Key Deadlines
-
-| Deliverable | Due | Requirements |
-|---|---|---|
-| Milestone report | July 7 | Working baseline, descriptive stats, code archive |
-| Final presentation | July 21, 9:00 AM | 5-minute slide deck |
-| Final written report | July 21, 11:59 PM | Max 10-page white paper + code archive |
-
-The milestone requires at least one fully working model (polynomial regression suffices) with out-of-sample results. Build the data pipeline first, then get the baseline running end-to-end before adding the NN.
-
----
-
-## 14. AI Use Disclosure
-
-Per course policy, the final report must include a paragraph describing how AI tools were used. It is not permitted to submit code or text that group members cannot explain under questioning. Every member should be able to defend every part of the project independently.
-
----
-
 ## References
 
 - Cao, J., Chen, J., & Hull, J. (2019). A neural network approach to understanding implied volatility movements. University of Toronto.
