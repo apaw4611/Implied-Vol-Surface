@@ -13,6 +13,23 @@ We model the equity options implied volatility (IV) surface using feedforward ne
 > - [`DECISIONS.md`](docs/DECISIONS.md) - log of key choices made during development and why
 > - [`TERMINOLOGY.md`](docs/TERMINOLOGY.md) - definitions of all project-specific terms (normalizedIV, atmIV, etc.)
 
+## Results
+
+Final feedforward NN (5 features) vs. baselines on the test sets:
+
+| Model | R² (test period) | RMSE, vol pts (test period) | R² (held-out tickers) | RMSE, vol pts (held-out tickers) |
+|---|---|---|---|---|
+| Polynomial, 2 features | 0.16 | 11.7 | 0.23 | 15.0 |
+| Polynomial, 5 features | 0.51 | 10.3 | -0.04 | 20.6 |
+| NN, 2 features | 0.32 | 11.5 | 0.26 | 16.7 |
+| **NN, 5 features (final)** | **0.96** | **4.7** | **0.74** | **8.2** |
+| SVI (in-sample calibration floor) | — | 4.7 | — | 6.5 |
+
+The NN approaches SVI's in-sample fit while generalising out of sample, including to tickers it never saw in training. SVI remains far better at avoiding arbitrage violations (butterfly: ~0.2% vs ~6% for the NN), which is the main open limitation.
+
+![RMSE by model](results/figures/results_summary/results_ladder_rmse.png)
+![Error heatmap](results/figures/results_summary/error_heatmap.png)
+
 ## Data
 
 Neither raw nor processed data is committed to this repo.
@@ -88,8 +105,16 @@ Then select the `bu493-project` kernel in any notebook.
 1. `src/build_dataset.py` - extract rows for the 12 chosen tickers from raw zips, filter, compute features, save to Parquet
 2. `notebooks/descriptive_stats.ipynb` - sample coverage, descriptive statistics, surface shape visualisation
 3. `notebooks/polynomial.ipynb` - polynomial Ridge regression baseline; degree and alpha tuning; test set evaluation
-4. *(todo)* `notebooks/svi.ipynb` - SVI parametric baseline
-5. *(todo)* `notebooks/neural_network.ipynb` - feedforward NN; hyperparameter tuning; comparison against baselines
+4. `notebooks/svi.ipynb` - SVI parametric baseline
+5. `notebooks/neural_network.ipynb` - feedforward NN; hyperparameter tuning; comparison against baselines
+
+## Models
+
+| Model | Status | Inputs | Target |
+|---|---|---|---|
+| Polynomial Ridge | ✅ Done | logMoneyness, years | normalizedIV |
+| SVI | ✅ Done | logMoneyness per maturity slice | totalVariance |
+| Feedforward NN | ✅ Done | logMoneyness, years, callPut, atmIV, realizedVol, recentReturn | normalizedIV |
 
 ## Evaluation
 
