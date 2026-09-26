@@ -41,7 +41,7 @@ Neither raw nor processed data is committed to this repo.
 ## Project Structure
 
 ```
-bu493_project/
+Implied-Vol-Surface/
 ├── data/
 │   ├── raw/                        # Raw zip files (gitignored)
 │   └── processed/                  # Parquet datasets (gitignored)
