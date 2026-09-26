@@ -1,6 +1,7 @@
 # Neural Network Pricing of the Implied Volatility Surface
 
 **Group:** Sahir Khan, Amar Pawan, Ben Peters, Scott Wilson
+
 **Course:** BU493 - ML in Finance
 
 ## Overview
