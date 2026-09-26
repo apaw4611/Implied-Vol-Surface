@@ -1,0 +1,5 @@
+split,rmse_volpts,bf_violation_pct,cal_violation_pct
+"train         (Jan-Aug,  training tickers)",5.530698359138797,0.09676409966872326,0.05383972797759816
+"val           (Sep-Oct,  training tickers)",4.990025158343535,0.0412001492113512,0.05682275635269127
+"test_temporal (Nov-Dec,  training tickers)",4.666236559394477,0.16704729778803554,0.1116461830961154
+"test_ticker   (Nov-Dec,  held-out tickers)",6.459433456332278,0.04200896191187453,0.16259957648482404
