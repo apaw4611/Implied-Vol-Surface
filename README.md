@@ -53,9 +53,9 @@ Implied-Vol-Surface/
 │   └── TERMINOLOGY.md              # Definitions of all project-specific terms
 ├── notebooks/
 │   ├── descriptive_stats.ipynb     # Data summary and surface shape visualisation
-│   ├── polynomial.ipynb            # Polynomial Ridge baseline (done)
-│   ├── svi.ipynb                   # SVI baseline (todo)
-│   └── neural_network.ipynb        # Feedforward NN main model (todo)
+│   ├── polynomial.ipynb            # Polynomial Ridge baseline
+│   ├── svi.ipynb                   # SVI baseline
+│   └── neural_network.ipynb        # Feedforward NN main model
 ├── results/
 │   ├── figures/                    # Saved plots
 │   ├── poly_alpha_search.csv       # Alpha tuning results
